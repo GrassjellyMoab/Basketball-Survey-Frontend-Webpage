@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="A simple basketball survey">
+    <meta name="author" content="JunChao">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Jquery.js"></script>
+    <script src="events.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Basketball Survery</title>
+    <!--Parallax experience -->
+    
+    
+  
+</head>
+<body style="background-color: bisque; height: 100vh;">
+    <div class="parallax1";>
+        <div class="caption1">
+            <div class="inside-caption1">
+                <h1>Basketball<br>Survey</h1>
+            </div>
+        </div>
+    </div>
+    <br>
+    <form id="myForm" action="After.html">
+        <div align="center">
+            <br>
+            <div class="container" id="name-container">
+                Enter your name:
+                <input type="text" id="name" size=35 maxlength=100, value="" class="textanswer">
+                <div id="wrong1" class="wrong" style="top: 10px; left: 28px;">This is a required question</div>  
+            </div>
+            <br>
+            <br>
+            <div class="container" id="player-container">
+                Enter your favourite basketball player of all time:
+                <input type="text" id="player" size=35 maxlength=100, value="" class="textanswer">
+                <div id="wrong2" class="wrong" style="top: 10px; left: 130px;">This is a required question</div>  
+                
+            </div>
+            <br><br>
+            <div class="container" id="why-container">
+                Tell us why you chose (player) stated above:
+                <br>
+                <textarea id="comments" cols=80 rows=12 class="commenting"></textarea>  
+                <div id="wrong3" class="wrong" style="left: 13px; top: 10px;">This is a required question</div>  
+            </div>
+            <br><br><br>
+            <div class="container" id="radio1-container">
+                Do you actively play basketball?
+                <br><br>
+                <div style="display: flex; align-items: center; justify-content: center">
+                    <!--label tag so that when click on word Yes will also toggle button check-->
+                    <label onClick="check('radio1.1')" class="radiocontainer" id="radio1">Yes
+                        <input onClick="checkboxClicked()" type="radio" name="exe" id="radio1.1" value=1>
+                        <span class="checkmark"></span>
+                    </label>
+                    <label onClick="check('radio1.2')" class="radiocontainer" id="radio1">No
+                        <input onClick="checkboxClicked()" type="radio" name="exe" id="radio1.2" value=2>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div id="wrong4" class="wrong">This is a required question</div>  
+            </div>    
+            
+                <br><br><br>
+                <div class="container" id="radio2-container">  
+                    What primary position do you usually play:
+                    <br><br>
+                    <div style="display: flex; align-items: center; justify-content: center">
+                        <br>
+                        <label onClick="check('radio2.1')" class="radiocontainer" id="radio2">
+                            <input onClick="checkboxClicked()" type="radio" name="exe1" id="radio2.1" value=1>PG
+                            <span class="checkmark"></span>
+                        </label>
+                        <label onClick="check('radio2.2')" class="radiocontainer" id="radio2">
+                            <input onClick="checkboxClicked()" type="radio" name="exe1" id="radio2.2" value=2>SG
+                            <span class="checkmark"></span>
+                        </label>
+                        <label onClick="check('radio2.3')" class="radiocontainer" id="radio2">
+                            <input onClick="checkboxClicked()" type="radio" name="exe1" id="radio2.3" value=3>SF
+                            <span class="checkmark"></span>
+                        </label>
+                        <label onClick="check('radio2.4')"class="radiocontainer" id="radio2">
+                            <input onClick="checkboxClicked()" type="radio" name="exe1" id="radio2.4" value=4>PF
+                            <span class="checkmark"></span>
+                        </label>
+                        <label onClick="check('radio2.5')"class="radiocontainer" id="radio2">
+                            <input onClick="checkboxClicked()" type="radio" name="exe1" id="radio2.5" value=5>C
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div id="wrong5" class="wrong">This is a required question</div>  
+            </div>
+            <br><br>
+            <div class="container" id="reason-container">
+                State any particular reason(s) for playing (position) stated above: 
+                <br>
+                <textarea id="answer" cols=80 rows=12 class="commenting"></textarea>
+                <div id="wrong6" class="wrong" style="left: 13px; top: 10px;"">This is a required question</div>  
+            </div>   
+            <br><br>
+            <div class="container" id="skill-container">
+                What do you think is the most valuable skill of a good basketball player?
+                
+                <select name="PrefSkill" id="skills" class="selectoption" style="font-family: 'Times New Roman', Times, serif;">
+                    <!--Remember put fale for empty select value-->
+                    <option value=0 id="option0"></option>
+                    <option value=1> Passing</option>
+                    <option value=2> Dribbling</option>
+                    <option value=3> Shooting</option>
+                    <option value=4> Blocking</option>
+                    <option value=5> Stealing</option>
+                    <option value=6> Rebounding</option>
+                    <option value=7> Layups/Dunks</option>
+                </select>
+                <div id="wrong7" class="wrong">This is a required question</div>  
+            </div>   
+            <br><br>
+            <!-- <button type="submit" value="Submit" name="sub" id="sub" class="buttonstyle">Submit Form</button> -->
+        </div>
+    </form>
+    <div align="center">
+        <button name="sub" id="sub" class="buttonstyle">Submit Form</button>
+    </div>
+    <br><br><br><br>
+</body>
+</html> 
