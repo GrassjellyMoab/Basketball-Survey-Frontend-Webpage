@@ -5,9 +5,9 @@
     margin: 0;
 
     /* Set a specific height */
-    min-height: 500px; 
+    min-height: 600px; 
     border-radius: 5px;
-    
+    min-width: 1440px;
     /* The image used */
     background-image: url("IMG_7966.jpg"); 
     /* Create the parallax scrolling effect */

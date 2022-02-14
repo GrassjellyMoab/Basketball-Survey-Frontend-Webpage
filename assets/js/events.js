@@ -238,35 +238,40 @@ $(function() {
 
     var elements = document.getElementById("myForm").elements;
     $('#sub').click(function(){
+        var count = 0;
         console.log("inside");
         for (var i = 0, element; element= elements[i++];){
+            if(element.value){
+                count += 1;
+            }
+
             if(element.id=="name" && !(element.value)){
                 $("#name-container").css({'border-color':'red'});
                 $("#name").css({'border-color':'red', 'border-width':'0 0 1px'});
                 $("#wrong1") .css({'display':'block'})
                 document.getElementById("name").scrollIntoView(({behavior: 'auto',block: 'center',inline: 'center'}));
-                return;
+                break;
             }
             else if (element.id=="player" && !(element.value)){
                 $("#player-container").css({'border-color':'red'});
                 $("#player").css({'border-color':'red', 'border-width':'0 0 1px'});  
                 $("#wrong2") .css({'display':'block'});
                 document.getElementById("player").scrollIntoView(({behavior: 'auto',block: 'center',inline: 'center'}));
-                return;   
+                break;   
             }
             else if (element.id=="comments" && !(element.value)){
                 $("#why-container").css({'border-color':'red'});
                 $("#comments").css({'border-color':'red', 'border-width':'1px'});  
                 $("#wrong3") .css({'display':'block'});   
                 document.getElementById("comments").scrollIntoView(({behavior: 'auto',block: 'center',inline: 'center'}));
-                return;
+                break;
             }
 
             else if ((element.getAttribute("name") == "exe") && !(document.getElementById("radio1.1").checked) && !(document.getElementById("radio1.2").checked)){
                 $("#radio1-container").css({'border-color':'red'}); 
                 $("#wrong4") .css({'display':'block', 'top': '15px'});  
                 document.getElementById("radio1-container").scrollIntoView(({behavior: 'auto',block: 'center',inline: 'center'}));
-                return;
+                break;
             }
         
             else if ((element.getAttribute("name") == "exe1") && !(document.getElementById("radio2.1").checked) && !(document.getElementById("radio2.2").checked) && !(document.getElementById("radio2.3").checked) && !(document.getElementById("radio2.4").checked) && !(document.getElementById("radio2.5").checked)){
@@ -275,7 +280,7 @@ $(function() {
                 $("#radio2-container").css({'border-color':'red'});
                 $("#wrong5") .css({'display':'block', 'top': '15px'});  
                 document.getElementById("radio2-container").scrollIntoView(({behavior: 'auto',block: 'center',inline: 'center'}));
-                return;
+                break;
             }
 
             else if (element.id=="answer" && !(element.value)){
@@ -284,7 +289,7 @@ $(function() {
                 $("#answer").css({'border-color':'red', 'border-width':'1px'});  
                 $("#wrong6") .css({'display':'block'});  
                 document.getElementById("answer").scrollIntoView(({behavior: 'auto',block: 'center',inline: 'center'}));
-                return;
+                break;
             }
 
             else if ( element.id=="skills" && element.value == 0){
@@ -292,11 +297,12 @@ $(function() {
                 $("#skill-container").css({'border-color':'red'});
                 $("#skills").css({'border-color':'red'});  
                 $("#wrong7") .css({'display':'block'});   
-                return;
+                break;
             }
-            else{
+            if(count == 7){
                 location.replace("After.html");
             }
         }
+        count = 0;
     })
 });
