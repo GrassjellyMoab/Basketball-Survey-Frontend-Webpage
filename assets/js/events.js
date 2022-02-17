@@ -57,7 +57,6 @@ $(function() {
         // change container border to orange when first click textbox
         if (!(checkskills)) {
             $("#skill-container").css({'border-color':'#F19955'});
-            console.log(123);
         }
         checkskills = true;
     });
@@ -78,7 +77,7 @@ $(function() {
 
 //----------------------------------------------------------------------------------------------------------------------
     $("body").click(function(e) {
-        console.log(e.target);
+        // console.log(e.target);
 //----------------id:name-----------------------------------------------------------------------------------------------
         // click anyone outside of the textbox
         if (e.target.id != "name" && checkname) {
@@ -239,9 +238,30 @@ $(function() {
     var elements = document.getElementById("myForm").elements;
     $('#sub').click(function(){
         var count = 0;
-        console.log("inside");
+        var radios1 = document.getElementsByName("exe");
+        var radios2 = document.getElementsByName("exe1");
+        var radiocount1 = 0;
+        var radiocount2 = 0;
+        // check if radio button has been checked
+        for (let i=0; i<radios1.length; i++) {
+            if (radios1[i].type == 'radio' && radios1[i].checked) {
+                radiocount1 = 1;
+                break;
+            }   
+            radiocount1 = 0;
+        }
+      
+        for (let i=0; i<radios2.length; i++) {
+            if (radios2[i].type == 'radio' && radios2[i].checked) {
+                radiocount2 = 1;
+                break;
+            } 
+            radiocount2 = 0;
+        }
+        
         for (var i = 0, element; element= elements[i++];){
-            if(element.value){
+            // if input not radio type and value!="" count+=1
+            if(element.value && element.type != 'radio'){
                 count += 1;
             }
 
@@ -284,25 +304,28 @@ $(function() {
             }
 
             else if (element.id=="answer" && !(element.value)){
-                console.log("HELLO?")
                 $("#reason-container").css({'border-color':'red'});
                 $("#answer").css({'border-color':'red', 'border-width':'1px'});  
                 $("#wrong6") .css({'display':'block'});  
                 document.getElementById("answer").scrollIntoView(({behavior: 'auto',block: 'center',inline: 'center'}));
+               
                 break;
             }
 
             else if ( element.id=="skills" && element.value == 0){
-                console.log("SKILL SECTIOn")
                 $("#skill-container").css({'border-color':'red'});
                 $("#skills").css({'border-color':'red'});  
                 $("#wrong7") .css({'display':'block'});   
+              
                 break;
             }
-            if(count == 7){
-                location.replace("After.html");
-            }
+    
+        }
+        // if form filled redirect to after.html
+        if(count + radiocount1 + radiocount2 == 7){
+            location.replace("After.html");
         }
         count = 0;
     })
+
 });

@@ -1,5 +1,10 @@
+body {
+    margin: 0;
+}
+
+
+
 .parallax1 {
-    
     position: relative;
     /* Top Margin, right margin, bottom margin, left margin */
     margin: 0;
@@ -17,11 +22,11 @@
     background-size: cover;
     }
 .caption1 {
-        display: inline-flex;
+        display: flex;
         /* Pefectly align in the middle */
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: 50vw;
         transform: translate(-50%, -50%);
         background-color: white;
         border-radius: 5px;

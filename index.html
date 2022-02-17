@@ -52,6 +52,7 @@
                 <br><br>
                 <div style="display: flex; align-items: center; justify-content: center">
                     <!--label tag so that when click on word Yes will also toggle button check-->
+                    <!-- <input type="hidden" name="exe" value=""> -->
                     <label onClick="check('radio1.1')" class="radiocontainer" id="radio1">Yes
                         <input onClick="checkboxClicked()" type="radio" name="exe" id="radio1.1" value=1>
                         <span class="checkmark"></span>
@@ -97,7 +98,7 @@
             <div class="container" id="reason-container">
                 State any particular reason(s) for playing (position) stated above: 
                 <br>
-                <textarea id="answer" cols=80 rows=12 class="commenting"></textarea>
+                <textarea id="answer" cols=80 rows=12 class="commenting" value=""></textarea>
                 <div id="wrong6" class="wrong" style="left: 13px; top: 10px;"">This is a required question</div>  
             </div>   
             <br><br>
@@ -106,7 +107,7 @@
                 
                 <select name="PrefSkill" id="skills" class="selectoption" style="font-family: 'Times New Roman', Times, serif;">
                     <!--Remember put fale for empty select value-->
-                    <option value=0 id="option0"></option>
+                    <option value="" id="option0"></option>
                     <option value=1> Passing</option>
                     <option value=2> Dribbling</option>
                     <option value=3> Shooting</option>
